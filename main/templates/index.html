@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gallery</title>
+    <link rel="stylesheet" href="/static/maincss.css">
+</head>
+<body>
+    <div class="body">
+        <div class="title_area">
+            <h1>My Gallery</h1>
+            <h3>이미지를 클릭하면 상세 페이지로 이동해요</h3>
+            <a href="{% url 'create' %}">새 이미지 등록하기</a>
+        </div>
+        <div class = "pic_area">
+                {% for one in all_data %}
+                <div class = "pic">
+                    <div class = "pic_upper">
+                    <a href="{% url 'detail' one.id %}"><img src = {{one.image.url}} width="200"></a>
+                    </div>
+                    <div class="pic_lower"><p>{{one.title}}</p></div>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

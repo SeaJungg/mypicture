@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What happened at this day</title>
+    <link rel="stylesheet" href="/static/detailcss.css">
+</head>
+<body>
+    <h1>What happened at this day</h1>
+    <h3>{{row_data.title}}</h3>
+    <img src = {{row_data.image.url}}>
+</body>
+</html>
